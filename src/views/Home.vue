@@ -1,8 +1,8 @@
 <template>
   <main class="bg-image h-screen">
-    <div class="custom-border">
+    <div class="custom-border border-opacity-50">
       <nav
-        class="container mx-auto text-white flex items-center grid grid-cols-2 h-14"
+        class="container mx-auto text-white flex items-center grid grid-cols-2 h-12"
       >
         <div>
           <a
@@ -27,42 +27,85 @@
           <div class="flex justify-around mr-3">
             <div class="flex items-center">
               <i class="fas fa-envelope px-1"></i>
-              <p>Contact</p>
+              <p class="text-sm font-bold">Contact</p>
             </div>
-            <p class="px-2">|</p>
+            <p class="px-2 text-sm">|</p>
             <div class="flex items-center">
               <i class="fas fa-map-pin px-1"></i>
-              <p>Find a dealer</p>
+              <p class="text-sm font-bold">Find a dealer</p>
             </div>
           </div>
           <div class="phone p-1 rounded flex items-center">
             <i class="fas fa-phone-alt pr-2"></i>
-            <p>800-999-3388</p>
+            <p class="text-sm">800-999-3388</p>
           </div>
         </div>
       </nav>
     </div>
-    <main>
-      <div
-        class="container items-end justify-between mx-auto text-white flex pt-5"
-      >
-        <h1 class="text-5xl font-bold fade-in">WPS</h1>
+    <main class="mt-2">
+      <div class="container items-end justify-between mx-auto text-white flex">
+        <h1 class="text-4xl font-bold fade-in pt-3">WPS</h1>
         <div class="flex">
-          <h5 class="px-3 font-bold text-base hover:text-gray-300 fade-in">
-            HOME
-          </h5>
-          <h5 class="px-3 font-bold text-base hover:text-gray-300 fade-in-1">
-            CATALOGS
-          </h5>
-          <h5 class="px-3 font-bold text-base hover:text-gray-300 fade-in-2">
-            WEBSITES
-          </h5>
-          <h5 class="px-3 font-bold text-base hover:text-gray-300 fade-in-3">
-            COMPANY
-          </h5>
-          <h5 class="px-3 font-bold text-base hover:text-gray-300 fade-in-4">
-            DEALERS
-          </h5>
+          <div class="px-3 hover:text-gray-300 nav-items">
+            <h1 class="hidden text-4xl" id="underscore">_</h1>
+            <h5 class="font-bold text-base fade-in">
+              HOME
+            </h5>
+          </div>
+          <div class="px-3 hover:text-gray-300 nav-items">
+            <h1 class="hidden text-4xl" id="underscore">_</h1>
+            <h5 class="font-bold text-base fade-in-1">
+              CATALOGS
+            </h5>
+          </div>
+          <div class="px-3 hover:text-gray-300 nav-items dropdown">
+            <h1 class="hidden text-4xl" id="underscore">_</h1>
+            <h5 class="font-bold text-base fade-in-2">
+              WEBSITES
+            </h5>
+            <div class="card hidden text-black">
+              <h1 class="text-center font-bold pt-1">Featured House Brands</h1>
+              <p class="p-2 text-xs">FIRE POWER</p>
+              <p class="p-2 text-xs">FLY RACING</p>
+              <p class="p-2 text-xs">GMAX HELMETS</p>
+              <p class="p-2 text-xs">HIGHWAY 21</p>
+              <p class="p-2 text-xs">OPEN TRAIL</p>
+              <p class="p-2 text-xs">SEDONA TIRE & WHEEL</p>
+              <p class="p-2 text-xs">SHINKO TIRES</p>
+              <p class="p-2 text-xs">SP1 PRODUCTS</p>
+            </div>
+          </div>
+          <div class="px-3 hover:text-gray-300 nav-items dropdown">
+            <h1 class="hidden text-4xl" id="underscore">_</h1>
+            <h5 class="font-bold text-base fade-in-3">
+              COMPANY
+            </h5>
+            <div class="card hidden text-black">
+              <p class="p-2 text-xs">ABOUT US</p>
+              <p class="p-2 text-xs">LATEST NEWS</p>
+              <p class="p-2 text-xs">BECOME A DEALER</p>
+              <p class="p-2 text-xs">DEALER LOCATOR</p>
+              <p class="p-2 text-xs">EMPLOYMENT</p>
+              <p class="p-2 text-xs">CONTACT US</p>
+            </div>
+          </div>
+          <div class="px-3 hover:text-gray-300 nav-items dropdown">
+            <h1 class="hidden text-4xl" id="underscore">_</h1>
+            <h5 class="font-bold text-base fade-in-4">
+              DEALERS
+            </h5>
+            <div class="card hidden text-black">
+              <h1 class="text-center pt-1">Featured House Brands</h1>
+              <p class="p-1">FIRE POWER</p>
+              <p class="p-1">FLY RACING</p>
+              <p class="p-1">GMAX HELMETS</p>
+              <p class="p-1">HIGHWAY 21</p>
+              <p class="p-1">OPEN TRAIL</p>
+              <p class="p-1">SEDONA TIRE & WHEEL</p>
+              <p class="p-1">SHINKO TIRES</p>
+              <p class="p-1">SP1 PRODUCTS</p>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -91,12 +134,22 @@ export default {
   background-size: cover;
 }
 
+.dropdown:hover .card {
+  height: 32vh;
+  width: 14vw;
+  display: block;
+  position: absolute;
+  top: 17vh;
+  background-color: white;
+  z-index: 100;
+}
+
 .nav-text {
   font-size: 15px;
 }
 
 .custom-border {
-  border-bottom: solid rgb(197, 197, 197) 1px;
+  box-shadow: 0 2px 2px -2px rgb(214, 214, 214);
 }
 
 .phone {
@@ -111,8 +164,14 @@ export default {
   cursor: pointer;
 }
 
-.fade-in {
-  animation: fadeIn ease 3s;
+.nav-items {
+  cursor: pointer;
+}
+
+.nav-items:hover #underscore {
+  display: block;
+  position: absolute;
+  top: 4.5vh;
 }
 @keyframes fadeIn {
   0% {
