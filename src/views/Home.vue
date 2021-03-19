@@ -1,130 +1,19 @@
 <template>
-  <main class="bg-image h-screen">
-    <div class="custom-border border-opacity-50">
-      <nav
-        class="container mx-auto text-white flex items-center grid grid-cols-2 h-12"
-      >
-        <div>
-          <a
-            href="http://www.facebook.com/pages/Western-Power-Sports/177028072341860"
-            target="_blank"
-            ><i class="fab fa-facebook nav-text px-1"></i
-          ></a>
-          <a href="http://twitter.com/WPS_Dist" target="_blank"
-            ><i class="fab fa-twitter nav-text  px-1"></i
-          ></a>
-          <a
-            href="http://www.linkedin.com/company/western-power-sports"
-            target="_blank"
-            ><i class="fab fa-linkedin nav-text px-1"></i
-          ></a>
-          <a href="http://www.youtube.com/westernpowersports" target="_blank"
-            ><i class="fab fa-youtube nav-text px-1"></i
-          ></a>
-        </div>
-
-        <div class="flex justify-end items-center">
-          <div class="flex justify-around mr-3">
-            <div class="flex items-center">
-              <i class="fas fa-envelope px-1"></i>
-              <p class="text-sm font-bold">Contact</p>
-            </div>
-            <p class="px-2 text-sm">|</p>
-            <div class="flex items-center">
-              <i class="fas fa-map-pin px-1"></i>
-              <p class="text-sm font-bold">Find a dealer</p>
-            </div>
-          </div>
-          <div class="phone p-1 rounded flex items-center">
-            <i class="fas fa-phone-alt pr-2"></i>
-            <p class="text-sm">800-999-3388</p>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <main class="mt-2">
-      <div class="container items-end justify-between mx-auto text-white flex">
-        <h1 class="text-4xl font-bold fade-in pt-3">WPS</h1>
-        <div class="flex">
-          <div class="px-3 hover:text-gray-300 nav-items">
-            <h1 class="hidden text-4xl" id="underscore">_</h1>
-            <h5 class="font-bold text-base fade-in">
-              HOME
-            </h5>
-          </div>
-          <div class="px-3 hover:text-gray-300 nav-items">
-            <h1 class="hidden text-4xl" id="underscore">_</h1>
-            <h5 class="font-bold text-base fade-in-1">
-              CATALOGS
-            </h5>
-          </div>
-          <div class="px-3 hover:text-gray-300 nav-items dropdown">
-            <h1 class="hidden text-4xl" id="underscore">_</h1>
-            <h5 class="font-bold text-base fade-in-2">
-              WEBSITES
-            </h5>
-            <div class="card hidden text-black">
-              <h1 class="text-center font-bold pt-1">Featured House Brands</h1>
-              <p class="p-2 text-xs">FIRE POWER</p>
-              <p class="p-2 text-xs">FLY RACING</p>
-              <p class="p-2 text-xs">GMAX HELMETS</p>
-              <p class="p-2 text-xs">HIGHWAY 21</p>
-              <p class="p-2 text-xs">OPEN TRAIL</p>
-              <p class="p-2 text-xs">SEDONA TIRE & WHEEL</p>
-              <p class="p-2 text-xs">SHINKO TIRES</p>
-              <p class="p-2 text-xs">SP1 PRODUCTS</p>
-            </div>
-          </div>
-          <div class="px-3 hover:text-gray-300 nav-items dropdown">
-            <h1 class="hidden text-4xl" id="underscore">_</h1>
-            <h5 class="font-bold text-base fade-in-3">
-              COMPANY
-            </h5>
-            <div class="card hidden text-black">
-              <p class="p-2 text-xs">ABOUT US</p>
-              <p class="p-2 text-xs">LATEST NEWS</p>
-              <p class="p-2 text-xs">BECOME A DEALER</p>
-              <p class="p-2 text-xs">DEALER LOCATOR</p>
-              <p class="p-2 text-xs">EMPLOYMENT</p>
-              <p class="p-2 text-xs">CONTACT US</p>
-            </div>
-          </div>
-          <div class="px-3 hover:text-gray-300 nav-items dropdown">
-            <h1 class="hidden text-4xl" id="underscore">_</h1>
-            <h5 class="font-bold text-base fade-in-4">
-              DEALERS
-            </h5>
-            <div class="card hidden text-black">
-              <h1 class="text-center pt-1">Featured House Brands</h1>
-              <p class="p-1">FIRE POWER</p>
-              <p class="p-1">FLY RACING</p>
-              <p class="p-1">GMAX HELMETS</p>
-              <p class="p-1">HIGHWAY 21</p>
-              <p class="p-1">OPEN TRAIL</p>
-              <p class="p-1">SEDONA TIRE & WHEEL</p>
-              <p class="p-1">SHINKO TIRES</p>
-              <p class="p-1">SP1 PRODUCTS</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="container mx-auto text-white text-center shadow-t font-bold animated animatedFadeInUp fadeInUp"
-      >
-        <h1 class="text-4xl mt-44 mb-14">WELCOME TO</h1>
-        <h1 class="text-8xl mb-20">WESTERN POWER SPORTS</h1>
-        <h1 class="text-4xl px-14">
-          THE FASTEST GROWING NATION-WIDE DELIVERY SYSTEM OF POWER SPORTS
-          INDUSTRY PRODUCTS
-        </h1>
-      </div>
-    </main>
-  </main>
+  <div>
+    <Carousel />
+    <LatestNews />
+  </div>
 </template>
 
 <script>
+import Carousel from "../components/carousel.vue";
+import LatestNews from "../components/LatestNews";
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    Carousel,
+    LatestNews
+  }
 };
 </script>
 <style scoped>
